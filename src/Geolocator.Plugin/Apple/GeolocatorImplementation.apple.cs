@@ -538,6 +538,8 @@ namespace Plugin.Geolocator
             }
 
 #if __IOS__ || __MACOS__
+			if (location.Course > -1)
+				p.Heading = location.Course;
             if (location.Speed > -1)
                 p.Speed = location.Speed;
 #endif
